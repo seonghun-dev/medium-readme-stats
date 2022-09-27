@@ -1,7 +1,7 @@
 const { getData } = require('../src/utils');
 const app = require('express')();
 
-app.get('/', async (req, res) => {
+app.get('/post', async (req, res) => {
     try {
         const { name } = req.query;
         const result = await getData(name);
@@ -20,5 +20,7 @@ app.get('/api', async (req, res) => {
         res.status(500).send(err);
     }
 });
+
+app.listen(3000, () => { });
 
 module.exports = app;

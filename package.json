@@ -2,9 +2,9 @@
   "name": "medium-readme-stats",
   "description": "Medium Readme Stats",
   "version": "1.0.0",
-  "main": "main.js",
+  "main": "/api/index.js",
   "scripts": {
-    "start": "node main.js",
+    "start": "node api/index.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "seonghun",
