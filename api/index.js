@@ -1,4 +1,4 @@
-
+const { getData } = require('../src/utils');
 const app = require('express')();
 
 app.get('/', async (req, res) => {

@@ -43,3 +43,5 @@ const getData = async (blogname) => {
     const post = createPost(username, pubDate, title, description, category);
     return post;
 }
+
+module.exports = { getData };
