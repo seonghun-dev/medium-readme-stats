@@ -3,6 +3,9 @@ const { XMLParser } = require('fast-xml-parser');
 const parser = new XMLParser();
 var { createPost } = require('./src/recent-post');
 
+const app = require('express')();
+
+
 async function getDataFromMediumFeed(blogname) {
     try {
         const res = await axios.get(`https://medium.com/@${blogname}/feed`);
@@ -46,7 +49,7 @@ const getData = async (blogname) => {
 }
 
 
-module.exports = async (req, res) => {
+app.get('/', async (req, res) => {
     try {
         const { name } = req.query;
         const result = await getData(name);
@@ -55,5 +58,6 @@ module.exports = async (req, res) => {
     } catch (err) {
         res.status(500).send(err);
     }
+});
 
-}
+module.exports = app;
