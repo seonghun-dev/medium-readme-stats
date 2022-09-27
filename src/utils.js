@@ -1,10 +1,7 @@
 const axios = require("axios");
 const { XMLParser } = require('fast-xml-parser');
 const parser = new XMLParser();
-var { createPost } = require('./src/recent-post');
-
-const app = require('express')();
-
+const { createPost } = require('./recent-post');
 
 async function getDataFromMediumFeed(blogname) {
     try {
@@ -25,7 +22,6 @@ async function getDataFromMediumFeed(blogname) {
 }
 
 const replaceHtmlTag = (contents) => {
-    console.log(contents);
     const result = contents.replace(/(<([^>]+)>)/gi, "");
     return result;
 }
@@ -47,26 +43,3 @@ const getData = async (blogname) => {
     const post = createPost(username, pubDate, title, description, category);
     return post;
 }
-
-
-app.get('/', async (req, res) => {
-    try {
-        const { name } = req.query;
-        const result = await getData(name);
-        res.setHeader('Content-Type', 'image/svg+xml');
-        res.status(200).send(result);
-    } catch (err) {
-        res.status(500).send(err);
-    }
-});
-
-app.get('api', async (req, res) => {
-    try {
-        res.status(200).send('test is Okay');
-
-    } catch (err) {
-        res.status(500).send(err);
-    }
-});
-
-module.exports = app;
