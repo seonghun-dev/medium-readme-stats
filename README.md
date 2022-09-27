@@ -1,4 +1,4 @@
-# Medium Readme Stats(Beta)
+# Medium Readme Stats
 
 In Markdwon, You can get medium recent post.
 
