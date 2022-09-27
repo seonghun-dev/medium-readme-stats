@@ -40,7 +40,7 @@ const getData = async (blogname) => {
     const result = parser.parse(r);
     const items = result.rss.channel.item[0];
     const title = result.rss.channel.item[0].title;
-    const category = result.rss.channel.item[0].category;
+    const category = result.rss.channel.item[0].category[0];
     const description = createShortDescription(result.rss.channel.item[0]['content:encoded']);
     const pubDate = result.rss.channel.item[0].pubDate.split(',')[1].split(' ')[1] + ' ' + result.rss.channel.item[0].pubDate.split(',')[1].split(' ')[2];
     const username = result.rss.channel.title.replace("Stories by ", "").replace(" on Medium", "");
@@ -55,6 +55,15 @@ app.get('/', async (req, res) => {
         const result = await getData(name);
         res.setHeader('Content-Type', 'image/svg+xml');
         res.status(200).send(result);
+    } catch (err) {
+        res.status(500).send(err);
+    }
+});
+
+app.get('api', async (req, res) => {
+    try {
+        res.status(200).send('test is Okay');
+
     } catch (err) {
         res.status(500).send(err);
     }
