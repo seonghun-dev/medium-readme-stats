@@ -1,0 +1,82 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="450" height="400" viewBox="0 0 450 300" fill="none">
+    <style>
+        .header {
+            font: bold 14px 'Segoe UI', Ubuntu, Sans-Serif;
+            fill: #343A40;
+        }
+
+        .log-title {
+            font: bold 14px 'Segoe UI', Ubuntu, Sans-Serif;
+            fill: #212529
+        }
+
+        .log-description {
+            font-size: 12px;
+            fill: #292929
+        }
+
+        .tag-item {
+            font-size: 10px;
+            fill: #292929;
+        }
+
+        .log-created {
+            font-size: 10px;
+            fill: #757575;
+        }
+    </style>
+    <rect xmlns="http://www.w3.org/2000/svg" data-testid="card-bg" x="0.5" y="0.5" rx="4.5" height="99%"
+        stroke="#e4e2e2" width="449" fill="#fffefe" stroke-opacity="1" />
+    <g data-testid="card-header" transform="translate(25, 35)">
+        <g transform="translate(0, 0)">
+            <svg xmlns="http://www.w3.org/2000/svg" width="20" x="390" y="-13" height="13" viewBox="0 0 1200 700">
+                <path
+                    d="M589 296a295 295 0 1 1-589 0C0 133 132 0 294 0s295 133 295 296m323 0c0 154-66 279-148 279S617 450 617 296 683 17 764 17s148 125 148 279m132 0c0 138-24 250-52 250s-52-112-52-250 23-250 52-250 52 112 52 250"
+                    fill="black" />
+            </svg>
+            <text x="0" y="0" class="header" data-testid="header">Seonghun Medium</text>
+        </g>
+    </g>
+    <g data-testid="card-body" transform="translate(0, 40)">
+        <svg data-testid="lang-items" x="25" width="400" height="60" viewBox="0 0 400 40">
+            <g transform="translate(0, 0)">
+                <text class="log-created" x="2" y="7">Sep 2</text>
+                <text data-testid="lang-name" x="2" y="25" class="log-title">C Unit Test
+                    Automation(Framework) — TDD</text>
+                <text ata-testid="lang-description" x="2" y="45" class="log-description">“가장 기본적인 실행 단위”는 C언어에서
+                    함수(Function)에 해당한다...</text>
+            </g>
+        </svg>
+    </g>
+    <g data-testid="card-bottom" transform="translate(0, -30)">
+        <svg data-testid="lang-items" x="25" width="124" viewBox="0 0 124 19">
+            <g style="position: relative;">
+                <rect width="40" height="19.5367" rx="9.76834" fill="#f2f2f2" />
+                <text data-testid="lang-name" text-anchor="middle" x="20" y="13" class="tag-item">TDD</text>
+            </g>
+        </svg>
+    </g>
+
+    <line x1="30" y1="150" x2="420" y2="150" stroke-width="1" stroke="#e6e6e6" />
+
+    <g data-testid="card-body" transform="translate(0, 165)">
+        <svg data-testid="lang-items" x="25" width="400" height="60" viewBox="0 0 400 40">
+            <g transform="translate(0, 0)">
+                <text class="log-created" x="2" y="7">Feb 16</text>
+                <text data-testid="lang-name" x="2" y="25" class="log-title">[C/C++]재귀함수를 이용한 피보나치수열이 O(n)의 시간 복잡도를
+                    ...</text>
+                <text ata-testid="lang-description" x="2" y="45" class="log-description">재귀함수를 통한 구현
+                    우선 윤성우의 열혈 자료구조 교재 코드 ...</text>
+            </g>
+        </svg>
+    </g>
+    <g data-testid="card-bottom" transform="translate(0, 100)">
+        <svg data-testid="lang-items" x="25" width="124" viewBox="0 0 124 19">
+            <g style="position: relative;">
+                <rect width="40" height="19.5367" rx="9.76834" fill="#f2f2f2" />
+                <text data-testid="lang-name" text-anchor="middle" x="20" y="13" class="tag-item">C++</text>
+            </g>
+        </svg>
+    </g>
+
+</svg>

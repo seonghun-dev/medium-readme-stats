@@ -1,0 +1,16 @@
+{
+  "name": "medium-readme-stats",
+  "description": "Medium Readme Stats",
+  "version": "1.0.0",
+  "main": "main.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "axios": "^0.27.2",
+    "fast-xml-parser": "^4.0.10",
+    "node-fetch": "^2.6.7"
+  }
+}
