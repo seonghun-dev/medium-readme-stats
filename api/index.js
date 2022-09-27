@@ -21,6 +21,5 @@ app.get('/api', async (req, res) => {
     }
 });
 
-app.listen(3000, () => { });
 
 module.exports = app;
