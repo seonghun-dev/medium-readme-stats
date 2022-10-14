@@ -16,7 +16,7 @@
         }
 
         .tag-item {
-            font-size: 10px;
+            font: 10px 'Segoe UI', Ubuntu, Sans-Serif;
             fill: #292929;
         }
 
@@ -51,8 +51,8 @@
     <g data-testid="card-bottom" transform="translate(0, 40)">
         <svg data-testid="lang-items" x="25" width="124" viewBox="0 0 124 19">
             <g style="position: relative;">
-                <rect width="40" height="19.5367" rx="9.76834" fill="#f2f2f2" />
-                <text data-testid="lang-name" text-anchor="middle" x="20" y="13" class="tag-item">TDD</text>
+                <rect width="60" height="19.5367" rx="9.76834" fill="#f2f2f2" />
+                <text data-testid="lang-name" text-anchor="middle" x="30" y="13" class="tag-item">javascript</text>
             </g>
         </svg>
     </g>

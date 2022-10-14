@@ -59,20 +59,21 @@ const createPostBody = (updateTime, title, content) => {
 `
 }
 
-const createPostFooter = (tags) => {
+const createPostFooter = (tag) => {
+  const textCardSize = tag.length * 5 + 15 + (tag.split(' ').length - 1) * 2;
   return `
   <g data-testid="card-bottom" transform="translate(0, 40)">
   <svg data-testid="lang-items" x="25" width="124" viewBox="0 0 124 19">
       <g style="position: relative;">
-          <rect width="40" height="19.5367" rx="9.76834" fill="#f2f2f2" />
-          <text data-testid="lang-name" text-anchor="middle" x="20" y="13" class="tag-item">${tags}</text>
+          <rect width="${textCardSize}" height="19.5367" rx="9.76834" fill="#f2f2f2" />
+          <text data-testid="lang-name" text-anchor="middle" x="${textCardSize / 2}" y="13" class="tag-item">${tag}</text>
       </g>
   </svg>
 </g>
 `
 }
 
-function createPost(username, updateTime, title, content, tags) {
+function createPost(username, updateTime, title, content, tag) {
   return `
 <svg xmlns="http://www.w3.org/2000/svg" width="450" height="160" viewBox="0 0 450 160" fill="none">
     ${styleTag}
@@ -80,7 +81,7 @@ function createPost(username, updateTime, title, content, tags) {
         stroke="#e4e2e2" width="449" fill="#fffefe" stroke-opacity="1" />
     ${createPostHeader(username)}
     ${createPostBody(updateTime, title, content)}
-    ${createPostFooter(tags)}
+    ${createPostFooter(tag)}
 </svg>`
 }
 
