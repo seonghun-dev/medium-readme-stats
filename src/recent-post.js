@@ -1,3 +1,5 @@
+const { parseXml, getDataFromMediumFeed } = require('./utils');
+
 const mediumLogo =
   `<svg xmlns="http://www.w3.org/2000/svg" width="20" x="390" y="-13" height="13" viewBox="0 0 1200 700">
     <path d="M589 296a295 295 0 1 1-589 0C0 133 132 0 294 0s295 133 295 296m323 0c0 154-66 279-148 279S617 450 617 296 683 17 764 17s148 125 148 279m132 0c0 138-24 250-52 250s-52-112-52-250 23-250 52-250 52 112 52 250" fill="black" />
@@ -21,7 +23,7 @@ const styleTag = `
   }
 
   .tag-item {
-      font-size: 10px;
+      font: 10px 'Segoe UI', Ubuntu, Sans-Serif;
       fill: #292929;
   }
 
@@ -83,15 +85,12 @@ function createPost(username, updateTime, title, content, tags) {
 }
 
 
-const createFile = (data) => {
-  var fs = require('fs');
-  fs.writeFile('./medium.svg', data, function (err) {
-    if (err === null) {
-      console.log('success');
-    } else {
-      console.log('fail');
-    }
-  });
+const createRecentPostCard = async (blogname) => {
+  feedXml = await getDataFromMediumFeed(blogname);
+  data = parseXml(feedXml);
+  const post = createPost(data.username, data.pubDate, data.title, data.description, data.category);
+
+  return post;
 }
 
-module.exports = { createPost, createFile };
+module.exports = { createRecentPostCard };

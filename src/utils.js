@@ -1,47 +1,55 @@
 const axios = require("axios");
 const { XMLParser } = require('fast-xml-parser');
 const parser = new XMLParser();
-const { createPost } = require('./recent-post');
 
+/*
+    * Get data from medium feed
+*/
 async function getDataFromMediumFeed(blogname) {
     try {
         const res = await axios.get(`https://medium.com/@${blogname}/feed`);
         if (res.status === 200) {
-            console.log(res.data);
             return res.data;
         }
         else {
-            console.log('error');
             return null;
         }
     }
     catch (err) {
-        console.log(err);
         return null;
     }
 }
 
+/*
+    * Replace html tag 
+*/
 const replaceHtmlTag = (contents) => {
     const result = contents.replace(/(<([^>]+)>)/gi, "");
     return result;
 }
 
+/*
+    * create short description
+*/
 const createShortDescription = (contents) => {
-    const shortDescription = replaceHtmlTag(contents).substring(0, 100) + '...';
+    const shortDescription = replaceHtmlTag(contents).substring(0, 60) + '...';
     return shortDescription;
 }
 
-const getData = async (blogname) => {
-    r = await getDataFromMediumFeed(blogname);
-    const result = parser.parse(r);
-    const items = result.rss.channel.item[0];
-    const title = result.rss.channel.item[0].title;
-    const category = result.rss.channel.item[0].category[0];
-    const description = createShortDescription(result.rss.channel.item[0]['content:encoded']);
-    const pubDate = result.rss.channel.item[0].pubDate.split(',')[1].split(' ')[1] + ' ' + result.rss.channel.item[0].pubDate.split(',')[1].split(' ')[2];
+/*
+    * parse xml based on field
+*/
+const parseXml = (xml) => {
+    const result = parser.parse(xml);
     const username = result.rss.channel.title.replace("Stories by ", "").replace(" on Medium", "");
-    const post = createPost(username, pubDate, title, description, category);
-    return post;
+
+    const item = result.rss.channel.item[0];
+    const title = item.title;
+    const category = item.category[0];
+    const description = createShortDescription(item['content:encoded']);
+    const pubDate = item.pubDate.split(',')[1].split(' ')[1] + ' ' + item.pubDate.split(',')[1].split(' ')[2];
+
+    return { username, title, category, description, pubDate };
 }
 
-module.exports = { getData };
+module.exports = { parseXml, getDataFromMediumFeed };
