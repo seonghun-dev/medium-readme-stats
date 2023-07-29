@@ -45,7 +45,7 @@ const parseXml = (xml) => {
 
     const item = result.rss.channel.item[0];
     const title = item.title;
-    const category = item.category[0];
+    const category = Array.isArray(item.category) ? item.category[0] : item.category;
     const description = createShortDescription(item['content:encoded']);
     const pubDate = item.pubDate.split(',')[1].split(' ')[1] + ' ' + item.pubDate.split(',')[1].split(' ')[2];
 
