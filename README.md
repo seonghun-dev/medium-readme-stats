@@ -1,37 +1,56 @@
-# Medium Readme Stats
-
-In Markdwon, You can get medium recent post.
-
-
-Using Github Readme Or Others
+## Medium Readme Stats
+#### In Github Readme, Show your Medium recent post.
 
 
-It provide to svg
+<div align="center">
+    <img src="https://medium-readme-stats.vercel.app/api/post?name=netflixtechblog" align="center" size="500">
+    <br/>
+    <br/>
+</div>
 
-## File Dir
-You can see preview in preview dir
-
-## Recent Post
-
-This show one recent medium post
+![License](https://img.shields.io/badge/License-Apache%202.0-blue.svg)
+![Vercel](https://vercelbadge.vercel.app/api/seonghun-dev/medium-readme-stats)
 
 
-create time, title, one line preview, tag
 
+## Features
+* **One Recent Post Veiw** — Show Recentest Post to SVG
+
+## Quick Start Guilde
 
 ```
-[![Medium GitHub stats](https://medium-readme-stats.vercel.app/api/post?name=seonghun-dev)](https://github.com/seonghun-dev/medium-readme-stats)
+![Medium GitHub stats](https://medium-readme-stats.vercel.app/api/post?name={username})
 ```
-[![Medium GitHub stats](https://medium-readme-stats.vercel.app/api/post?name=dev-seonghun)](https://github.com/seonghun-dev/medium-readme-stats)
+Replace `{username}` with the username of the medium username.
 
 
-## Recent Posts
-This show two recent medium post
-
-create time, title, one line preview, tag, user profile, user name
+### Examples
 
 
 
-## Reference
-https://github.com/eungyeole/velog-readme-stats
+My Medium Blog Link is https://dev-seonghun.medium.com/
+So I add to username `dev-seonghun`.
 
+```
+[![Medium GitHub stats](https://medium-readme-stats.vercel.app/api/post?name=dev-seonghun)](https://dev-seonghun.medium.com/)
+```
+[![Medium GitHub stats](https://medium-readme-stats.vercel.app/api/post?name=dev-seonghun)](https://dev-seonghun.medium.com/)
+
+
+When you add netflix medium blog to Readme Stats like https://netflixtechblog.medium.com/ 
+Using `netflixtechblog` to username.
+It will be render like below.
+
+```
+[![Medium GitHub stats](https://medium-readme-stats.vercel.app/api/post?name=netflixtechblog)](https://github.com/seonghun-dev/medium-readme-stats)
+```
+
+[![Medium GitHub stats](https://medium-readme-stats.vercel.app/api/post?name=netflixtechblog)](https://netflixtechblog.medium.com/)
+
+
+# Reference
+- https://github.com/eungyeole/velog-readme-stats
+
+# Contributing
+
+Please refer to [contributing guide](), we'll guide you from there.
