@@ -60,6 +60,10 @@ const createPostBody = (updateTime, title, content) => {
 }
 
 const createPostFooter = (tag) => {
+  if (tag === undefined) {
+    return '';
+  }
+
   const textCardSize = tag.length * 5 + 15 + (tag.split(' ').length - 1) * 2;
   return `
   <g data-testid="card-bottom" transform="translate(0, 40)">
